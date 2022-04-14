@@ -1,8 +1,10 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link>
+    <router-link to="/">All Movies</router-link>
     |
-    <router-link to="/movie">Create A Movie</router-link>
+    <router-link to="/movie">Add A Movie</router-link>
+    |
+    <router-link to="/actors">All Actors</router-link>
   </nav>
   <router-view />
 </template>

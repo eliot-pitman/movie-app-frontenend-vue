@@ -46,7 +46,8 @@ export default {
       <div v-for="movie in movies" :key="movie.id">
         <h2>{{ movie.title }}</h2>
         <h3>{{ movie.plot }}</h3>
-        <button id="info-button" @click="showMovie(movie)">click for more info</button>
+        <button id="info-button" @click="showMovie(movie)">click to update</button>
+        <a :href="`/movie/${movie.id}`"><button>more info</button></a>
       </div>
       <div>
         <dialog id="movie-details">
