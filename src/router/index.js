@@ -4,6 +4,9 @@ import CreateMovie from "../views/CreateMovie.vue";
 import ShowMovie from "../views/ShowMovie.vue";
 import IndexActors from "../views/IndexActors.vue";
 import ShowActor from "../views/ShowActor.vue";
+import SignUp from "../views/SignUp.vue";
+import LogIn from "../views/LogIn.vue";
+import LogOut from "../views/LogOut.vue";
 
 const routes = [
   {
@@ -38,6 +41,21 @@ const routes = [
     path: "/actors/:id",
     name: "ShowActor",
     component: ShowActor,
+  },
+  {
+    path: "/SignUp",
+    name: "SignUp",
+    component: SignUp,
+  },
+  {
+    path: "/LogIn",
+    name: "LogIn",
+    component: LogIn,
+  },
+  {
+    path: "/LogOut",
+    name: "LogOut",
+    component: LogOut,
   },
 ];
 

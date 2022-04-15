@@ -11,6 +11,7 @@ export default {
     axios.get("http://localhost:3000/actors.json").then((response) => {
       console.log(response.data);
       this.actors = response.data;
+      this.$route.push("/");
     });
   },
 };
