@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newMovieParams: {},
+      newMovieParams: { plot: "" },
     };
   },
   created: function () {},
@@ -38,6 +38,10 @@ export default {
           plot:
           <input type="text" v-model="newMovieParams.plot" />
         </div>
+        <small v-if="newMovieParams.plot.length > 120">Characters over: {{ newMovieParams.plot.length - 120 }}</small>
+        <small v-if="newMovieParams.plot.length < 120">
+          Characters remaining: {{ 120 - newMovieParams.plot.length }}
+        </small>
         <br />
         <div>
           director:

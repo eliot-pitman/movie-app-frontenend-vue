@@ -1,10 +1,13 @@
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       movies: [],
       currentMovie: {},
+      titleFilter: "",
     };
   },
   created: function () {
@@ -42,6 +45,18 @@ export default {
 <template>
   <div class="home">
     <h1>Movies!</h1>
+    <h1>Search by name:</h1>
+    <input v-model="titleFilter" list="titles" />
+    <datalist id="titles">
+      <option v-for="movie in movies" v-bind:key="movie.id">{{ movie.title }}</option>
+    </datalist>
+    <h2>Search by title:</h2>
+
+    <input v-model="titleFilter" />
+    <div v-for="movie in orderBy(filterBy(movies, titleFilter, 'title'), 'title')" :key="movie.id">
+      <h3>{{ movie }}</h3>
+    </div>
+    <h1>All movies</h1>
     <div>
       <div v-for="movie in movies" :key="movie.id">
         <h2>{{ movie.title }}</h2>
